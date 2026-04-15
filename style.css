@@ -203,6 +203,20 @@ a:hover {
   filter: invert(1);
 }
 
+/* HERO → ABOUT transition fade */
+
+.hero-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, white);
+  z-index: 6;
+  pointer-events: none;
+}
+
 /* SECTIONS */
 
 section {
