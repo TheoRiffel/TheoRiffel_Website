@@ -45,12 +45,28 @@
   .about-containers {
     margin-top: 0;
   }
+
+  /* Featured cards: stack image on top */
+  .featured-card {
+    flex-direction: column;
+  }
+  .featured-card-img-slot {
+    width: 100%;
+    height: 220px;
+  }
+  .featured-card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  #contact,
+  #contact {
+    height: fit-content;
+    padding-bottom: 3rem;
+  }
   footer {
-    height: 40vh;
+    height: fit-content;
+    padding: 2rem 0;
   }
   #profile {
     height: 83vh;
@@ -64,12 +80,16 @@
     margin-bottom: 2rem;
   }
   .about-containers,
-  .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
   }
+  .contact-info-upper-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
   .contact-info-container {
-    margin: 0;
+    margin: 0.5rem 0;
   }
   .contact-info-container p,
   .nav-links li a {
@@ -99,5 +119,33 @@
   }
   .text-container {
     text-align: justify;
+  }
+
+  /* Skills table: compact on small screens */
+  .skills-table {
+    padding: 1.25rem 1rem;
+    gap: 0.5rem 1.5rem;
+  }
+  .skills-col-header {
+    font-size: 1.1rem;
+  }
+
+  /* Featured card header: let date wrap below title */
+  .featured-card-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .role-period {
+    white-space: normal;
+  }
+
+  /* Featured card buttons: wrap on very small screens */
+  .featured-card .btn-container {
+    flex-wrap: wrap;
+  }
+
+  /* Featured card image: shorter on phones */
+  .featured-card-img-slot {
+    height: 160px;
   }
 }
