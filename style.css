@@ -169,11 +169,15 @@ a:hover {
   z-index: 10; /* Bring content to front */
 }
 
-.hero-container nav a,
-.hero-container .logo,
+.hero-container #desktop-nav a,
+.hero-container #hamburger-nav > .logo,
 .hero-container .section__text p,
 .hero-container .section__text .title {
   color: white;
+}
+
+.hero-container .menu-links a {
+  color: black;
 }
 
 .hero-container .hamburger-icon span {
@@ -203,20 +207,6 @@ a:hover {
   filter: invert(1);
 }
 
-/* HERO → ABOUT transition fade */
-
-.hero-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, white);
-  z-index: 6;
-  pointer-events: none;
-}
-
 /* SECTIONS */
 
 section {
@@ -235,9 +225,50 @@ section {
 
 #profile {
   display: flex;
-  justify-content: center;
-  gap: 5rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  padding-top: 15vh;
   height: auto;
+  min-height: 120vh;
+  position: relative;
+  gap: 0;
+}
+
+#profile .section__text {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+  align-self: center;
+  text-align: center;
+}
+
+#profile .section__pic-container {
+  margin-top: -30vh;
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 5;
+  position: relative;
+  pointer-events: none;
+}
+
+#profile .section__pic-container img {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section__text * {
+  pointer-events: auto;
 }
 
 .section__pic-container {

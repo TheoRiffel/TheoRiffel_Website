@@ -7,58 +7,6 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
-    <style>
-      #profile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        height: auto;
-        position: relative;
-        min-height: 120vh;
-        padding-top: 15vh; 
-      }
-      /* Making the text move slower (parallax) via JS */
-      #profile .section__text {
-        position: relative;
-        z-index: 1;
-        margin-bottom: 0vh;
-        align-self: center;
-        text-align: center;
-      }
-      /* Targeting the profile pic container for full width and responsive cropping */
-      #profile .section__pic-container {
-        margin-top: -30vh; /* Adjust this to control mountain start position */
-        width: 100%;
-        min-height: 500px;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        z-index: 5;
-        position: relative;
-        pointer-events: none;
-      }
-      #profile .section__pic-container img {
-        width: 100%;
-        height: auto;
-        min-height: 500px;
-        object-fit: cover;
-        object-position: center;
-      }
-      /* Overriding the default section margin for the profile section */
-      section#profile {
-        margin: 0;
-        max-width: none;
-        width: 100%;
-      }
-      /* Ensuring buttons/socials are clickable by setting pointer-events */
-      .section__text * {
-        pointer-events: auto;
-      }
-    </style>
   </head>
   <body>
     <div class="hero-container">
