@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+      #profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: auto;
+        position: relative;
+        min-height: 120vh;
+        padding-top: 15vh; 
+      }
+      /* Making the text move slower (parallax) via JS */
+      #profile .section__text {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 0vh;
+        align-self: center;
+        text-align: center;
+      }
+      /* Targeting the profile pic container for full width and responsive cropping */
+      #profile .section__pic-container {
+        margin-top: -30vh; /* Adjust this to control mountain start position */
+        width: 100%;
+        min-height: 500px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        z-index: 5;
+        position: relative;
+        pointer-events: none;
+      }
+      #profile .section__pic-container img {
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+        object-fit: cover;
+        object-position: center;
+      }
+      /* Overriding the default section margin for the profile section */
+      section#profile {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+      /* Ensuring buttons/socials are clickable by setting pointer-events */
+      .section__text * {
+        pointer-events: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-container">
+      <div id="particles-js"></div>
+    <nav id="desktop-nav">
+      <div class="logo">Théo Riffel</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Théo Riffel</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__text">
+        <!-- <p class="section__text__p1">Hello, I'm</p> -->
+        <h1 class="title">Théo Riffel</h1>
+        <p class="section__text__p2">Data Scientist and ML Engineer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume.pdf')"
+          >
+            Curriculum
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/theoriffel/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/TheoRiffel'"
+          />
+        </div>
+      </div>
+      <div class="section__pic-container">
+        <img src="./assets/Montanha_Sem_fundo.webp" alt="Théo Riffel profile picture" />
+      </div>
+    </section>
+    </div>
+    <section id="about">
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/profile-pic.JPG"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.Sc. Computer Science<br />University of São Paulo (USP)</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/airplane.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Exchange Program</h3>
+              <p>University of Bern<br />Switzerland</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I would define myself how I would like to be remembered: a particular artistic mind from the interior of Brazil,  fascinated in nature, art, astronomy and math.
+              <br />
+              <br />
+              Computer Science was for me the perfect match. I can create, learn, model and experience the world in a way that creates real impact.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <h1 class="title">Experience</h1>
+      <p class="experience-section-label">Technical Skills</p>
+      <div class="skills-table">
+        <div class="skills-col-header">ML / DL &amp; Programming</div>
+        <div class="skills-col-header">Data Engineering &amp; MLOps</div>
+
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>Python</h3><p>Experienced</p></div>
+        </article>
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>Pandas / NumPy</h3><p>Experienced</p></div>
+        </article>
+
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>PyTorch</h3><p>Experienced</p></div>
+        </article>
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>ETL Pipelines</h3><p>Experienced</p></div>
+        </article>
+
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>TensorFlow</h3><p>Experienced</p></div>
+        </article>
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>PostgreSQL / MySQL</h3><p>Intermediate</p></div>
+        </article>
+
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>Scikit-Learn</h3><p>Experienced</p></div>
+        </article>
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>Docker</h3><p>Intermediate</p></div>
+        </article>
+
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>XGBoost</h3><p>Experienced</p></div>
+        </article>
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>AWS (S3, EC2, SageMaker)</h3><p>Intermediate</p></div>
+        </article>
+
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>SQL / R / C++</h3><p>Intermediate</p></div>
+        </article>
+        <article>
+          <img src="./assets/checkmark.png" alt="" class="icon" />
+          <div><h3>Spark</h3><p>Basic</p></div>
+        </article>
+      </div>
+
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="featured-cards-container" style="margin-bottom: 2rem;">
+
+        <div class="featured-card">
+          <div class="featured-card-img-slot">
+            <img src="./assets/brain_network.jpg" alt="Parkinson's Disease Research" class="project-img" />
+          </div>
+          <div class="featured-card-body">
+            <div class="featured-card-header">
+              <div>
+                <h3 class="featured-card-title">Researcher in Machine Learning</h3>
+                <p class="featured-card-org">FAPESP Scholarship &mdash; AI in Health</p>
+              </div>
+              <span class="role-period">Oct 2024 &ndash; Present</span>
+            </div>
+            <ul class="role-bullets">
+              <li>Awarded the J.F. Marar Prize for best undergraduate research in Computer Science at USP.</li>
+              <li>Achieved ~80% accuracy in early Parkinson's Disease diagnosis, validated across 500+ fMRI scans, via end-to-end ML/DL pipelines with automated ETL and feature engineering.</li>
+              <li>Improved clinical interpretability by integrating Explainable AI (XAI) methods, enabling neurologists to identify discriminative brain connectivity patterns.</li>
+              <li> Paper still in review.</li>
+            </ul>
+            <div class="btn-container" style="justify-content: flex-start; margin-top: 1.25rem;">
+              <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/TCC.pdf')">Research PDF</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.icmc.usp.br/institucional/premios/premio-j-f-marar'"> J.F.Marar Award</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <div class="featured-card-img-slot">
+            <img src="./assets/data.png" alt="Litter Analytics" class="project-img" />
+          </div>
+          <div class="featured-card-body">
+            <div class="featured-card-header">
+              <div>
+                <h3 class="featured-card-title">Coordinator &mdash; DATA Research Group</h3>
+                <p class="featured-card-org">Data Science &amp; ML Student Group, USP</p>
+              </div>
+              <span class="role-period">Feb 2023 &ndash; Dec 2025</span>
+            </div>
+            <ul class="role-bullets">
+              <li>Scaled group to 35+ active members (230% growth) by implementing agile workflows across parallel ML project teams.</li>
+              <li>Organized UDL 2024 conference with speakers from MIT, DeepMind, and Cambridge, reaching 25,000+ YouTube views.</li>
+              <li>Upskilled 2,192 participants nationwide through three open-access courses in ML, Reinforcement Learning, and SQL.</li>
+            </ul>
+            <div class="btn-container" style="justify-content: flex-start; margin-top: 1.25rem; gap: 0.75rem;">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://data.icmc.usp.br/'">Website</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.youtube.com/playlist?list=PLFE-LjWAAP9SP4rTHTbTI5JihmkNVVCt4'">UDL Playlist</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/icmc-data'">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/data_da_coleta.jpeg"
+                alt="Litter Analytics"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Litter Analytics</h2>
+            <p style="font-size: 0.85rem; margin: 0.5rem 1rem 1rem; text-align: center;">
+              Public dataset & REST API processing 1,000+ street litter images — ETL pipeline, OpenCV, SQL, Docker.
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/TheoRiffel'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/landslides.webp"
+                alt="Landslide Prediction"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Landslide Prediction</h2>
+            <p style="font-size: 0.85rem; margin: 0.5rem 1rem 1rem; text-align: center;">
+              Top 5/62 teams at GCL Hackathon 2024 (Imperial, TUM, Tsinghua) — Scikit-Learn on NASA satellite & weather data.
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/TheoRiffel'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/sentiment_analysis.png"
+                alt="Sentiment Analysis System"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Sentiment Analysis</h2>
+            <p style="font-size: 0.85rem; margin: 0.5rem 1rem 1rem; text-align: center;">
+              80.8% F1-score on 50,000+ reviews — 12% above BERTimbau baseline via fine-tuning and symbolic linguistic rules.
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/TheoRiffel'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:theobfriffel@gmail.com">theobfriffel 'at' gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/theoriffel/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Théo Riffel. All Rights Reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
